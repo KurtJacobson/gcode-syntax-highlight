@@ -19,7 +19,7 @@
 			<key>comment</key>
 			<string>g commands</string>
 			<key>match</key>
-			<string>(?i)G( )*\d+</string>
+			<string>(?i)G( )*\d+(.\d)*</string>
 			<key>name</key>
 			<string>keyword.control</string>
 		</dict>
