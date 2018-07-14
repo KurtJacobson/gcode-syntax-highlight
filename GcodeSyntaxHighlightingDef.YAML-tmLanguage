@@ -48,7 +48,7 @@ patterns:
 
 - comment: feeds & speeds
   name: variable.parameter
-  match: (?<= )[FS]([ \d\.-])+
+  match: (?i)[FS]([ \d\.-])+
 
 - comment: O & N numberes
   name: support.function
