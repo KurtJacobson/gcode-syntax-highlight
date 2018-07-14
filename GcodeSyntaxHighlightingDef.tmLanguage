@@ -12,7 +12,7 @@
 		<string>gcode</string>
 	</array>
 	<key>name</key>
-	<string>G-code (woo)</string>
+	<string>G-code</string>
 	<key>patterns</key>
 	<array>
 		<dict>

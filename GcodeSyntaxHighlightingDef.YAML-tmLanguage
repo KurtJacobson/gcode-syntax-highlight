@@ -1,6 +1,6 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
-name: G-code (woo)
+name: G-code
 scopeName: source.iso6983
 fileTypes: [eia,nc,ngc,prg,mpf,gcode]
 uuid: e6875107-21f9-449b-bbae-036db969b3d2
