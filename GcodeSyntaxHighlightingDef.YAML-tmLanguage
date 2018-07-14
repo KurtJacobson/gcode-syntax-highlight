@@ -8,11 +8,11 @@ uuid: e6875107-21f9-449b-bbae-036db969b3d2
 patterns:
 - comment: g commands
   name: keyword.control
-  match: (?i)G\d+
+  match: (?i)G( )*\d+
 
 - comment: m commands
   name: keyword.control
-  match: (?i)M\d+
+  match: (?i)M( )*\d+
 
 - comment: comments
   name: comment.line
@@ -40,19 +40,19 @@ patterns:
 
 - comment: positions - alpha component
   name: markup.bold
-  match: (?i)([XYZABCIJK]{1})(?=([\d\.-])*)
+  match: (?i)([XYZABCIJK]{1})(?=([ \d\.-])*)
 
 - comment: positions - numeric component
   name: constant.numeric
-  match: (?i)(?<=[XYZABCIJK])([\d\.-])*
+  match: (?i)(?<=[XYZABCIJK])([ \d\.-])*
 
 - comment: feeds & speeds
   name: variable.parameter
-  match: (?<= )[FS]([\d\.-])+
+  match: (?<= )[FS]([ \d\.-])+
 
 - comment: O & N numberes
   name: support.function
-  match: (?i)([ON]([\d\.-])+)
+  match: (?i)([ON]([ \d\.-])+)
 
 - comment: brackets
   name: string.interpolated
