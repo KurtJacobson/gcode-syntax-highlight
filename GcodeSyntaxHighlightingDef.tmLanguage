@@ -4,6 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
+		<string>eia</string>
 		<string>nc</string>
 		<string>ngc</string>
 		<string>prg</string>
@@ -18,23 +19,23 @@
 			<key>comment</key>
 			<string>g commands</string>
 			<key>match</key>
-			<string>G\d+</string>
+			<string>(?i)G( )*\d+(.\d)*</string>
 			<key>name</key>
-			<string>support.variable</string>
+			<string>keyword.control</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>m commands</string>
 			<key>match</key>
-			<string>M\d+</string>
+			<string>(?i)M( )*\d+</string>
 			<key>name</key>
-			<string>support.constant</string>
+			<string>keyword.control</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>comments</string>
 			<key>match</key>
-			<string>\(.*\)</string>
+			<string>(\(.*\)|;.*|^/.*|^%.*)</string>
 			<key>name</key>
 			<string>comment.line</string>
 		</dict>
@@ -42,33 +43,33 @@
 			<key>comment</key>
 			<string>flow control operators</string>
 			<key>match</key>
-			<string>(IF|THEN|AND|OR|WHILE|GOTO)</string>
+			<string>(?i)(IF|THEN|AND|OR|WHILE|GOTO)</string>
 			<key>name</key>
 			<string>keyword.control</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>functions</string>
-			<key>match</key>
-			<string>(ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)</string>
-			<key>name</key>
-			<string>support.function</string>
-		</dict>
-		<dict>
-			<key>comment</key>
 			<string>comparison operators</string>
 			<key>match</key>
-			<string>(GT|LT|GE|LE|EQ)</string>
+			<string>(?i)(GT|LT|GE|LE|EQ)</string>
 			<key>name</key>
 			<string>keyword.operator</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>flow control locations</string>
+			<string>flow control operators - locations</string>
 			<key>match</key>
 			<string>(?&lt;=GOTO|DO)\d+</string>
 			<key>name</key>
 			<string>markup.italic</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>functions</string>
+			<key>match</key>
+			<string>(?i)(ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)</string>
+			<key>name</key>
+			<string>support.function</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -80,25 +81,17 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>positions</string>
+			<string>positions - alpha component</string>
 			<key>match</key>
-			<string>([XYZABC]{1})(?=([\d\.-])*)</string>
+			<string>(?i)([XYZABCIJK]{1})(?=([ \d\.-])*)</string>
 			<key>name</key>
 			<string>markup.bold</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>arc positions</string>
+			<string>positions - numeric component</string>
 			<key>match</key>
-			<string>([IJK])(?=([\d\.-])*)</string>
-			<key>name</key>
-			<string>markup.italic</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>positions</string>
-			<key>match</key>
-			<string>(?&lt;=[XYZABC])([\d\.-])*</string>
+			<string>(?i)(?&lt;=[XYZABCIJK])([ \d\.-])*</string>
 			<key>name</key>
 			<string>constant.numeric</string>
 		</dict>
@@ -106,15 +99,15 @@
 			<key>comment</key>
 			<string>feeds &amp; speeds</string>
 			<key>match</key>
-			<string>(?&lt;= )[FS]([\d\.-])+</string>
+			<string>(?i)[FS]([ \d\.-])+</string>
 			<key>name</key>
 			<string>variable.parameter</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>O &amp; N numberes</string>
+			<string>O &amp; N numbers</string>
 			<key>match</key>
-			<string>([ON]([\d\.-])+)</string>
+			<string>(?i)([ON]([ \d\.-])+)</string>
 			<key>name</key>
 			<string>support.function</string>
 		</dict>

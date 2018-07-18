@@ -7,24 +7,24 @@ uuid: e6875107-21f9-449b-bbae-036db969b3d2
 
 patterns:
 - comment: g commands
-  name: support.variable
-  match: G\d+
+  name: keyword.control
+  match: (?i)G( )*\d+(.\d)*
 
 - comment: m commands
-  name: support.constant
-  match: M\d+
+  name: keyword.control
+  match: (?i)M( )*\d+
 
 - comment: comments
   name: comment.line
-  match: \(.*\)
+  match: (\(.*\)|;.*|^/.*|^%.*)
 
 - comment: flow control operators
   name: keyword.control
-  match: (IF|THEN|AND|OR|WHILE|GOTO)
+  match: (?i)(IF|THEN|AND|OR|WHILE|GOTO)
 
 - comment: comparison operators
   name: keyword.operator
-  match: (GT|LT|GE|LE|EQ)
+  match: (?i)(GT|LT|GE|LE|EQ)
 
 - comment: flow control operators - locations
   name: markup.italic
@@ -32,7 +32,7 @@ patterns:
 
 - comment: functions
   name: support.function
-  match: (ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)
+  match: (?i)(ABS|ACOS|ASIN|ATAN|COS|LN|EXP|FIX|FUP|MOD|ROUND|SQRT|SIN|TAN)
 
 - comment: variables
   name: variable.other
@@ -40,23 +40,19 @@ patterns:
 
 - comment: positions - alpha component
   name: markup.bold
-  match: ([XYZABC]{1})(?=([\d\.-])*)
+  match: (?i)([XYZABCIJK]{1})(?=([ \d\.-])*)
 
 - comment: positions - numeric component
   name: constant.numeric
-  match: (?<=[XYZABC])([\d\.-])*
-
-- comment: arc positions
-  name: markup.italic
-  match: ([IJK])(?=([\d\.-])*)
+  match: (?i)(?<=[XYZABCIJK])([ \d\.-])*
 
 - comment: feeds & speeds
   name: variable.parameter
-  match: (?<= )[FS]([\d\.-])+
+  match: (?i)[FS]([ \d\.-])+
 
 - comment: O & N numberes
   name: support.function
-  match: ([ON]([\d\.-])+)
+  match: (?i)([ON]([ \d\.-])+)
 
 - comment: brackets
   name: string.interpolated
